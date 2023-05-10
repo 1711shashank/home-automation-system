@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Home Automation System </title>
+    <title>Home Automation System</title>
+
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -73,20 +74,24 @@
       <h1>Home Automation System</h1>
     </div>
 
+    <!-- 
     <button onclick="changeMotion()"> Change Motion </button>
     <button onclick="checkTemp()">check Temp</button>
     <button onclick="checkConnection()">check Connection</button>
-    
+    -->
 
     <div class="card-container">
       <div class="card">
         <p class="card-head">Motion Sensor</p>
         <div class="card-img1">
           <img id="motion-bulb-img" src="images/off-bulb.png" width="150px" />
-          <strong id="motion-bulb-status" style="color: red; font-size: 28px; margin-top: 20px">OFF</strong>
-
+          <strong
+            id="motion-bulb-status"
+            style="color: red; font-size: 28px; margin-top: 20px"
+            >OFF</strong
+          >
         </div>
-        <p id="motion-detected-message" class="card-message"> Motion Detected </p>
+        <p id="motion-detected-message" class="card-message">Motion Detected</p>
       </div>
 
       <div class="card">
@@ -95,13 +100,19 @@
         <div class="card-img2">
           <div class="card-img1">
             <img src="images/temperature.png" width="85px" />
-            <p id="temperature-value" style="color: #575757; font-size: 28px; margin-top: 20px">
+            <p
+              id="temperature-value"
+              style="color: #575757; font-size: 28px; margin-top: 20px"
+            >
               NA
             </p>
           </div>
           <div class="card-img1">
             <img src="images\humidity.png" width="105px" />
-            <p id="humidity-value" style="color: #575757; font-size: 28px; margin-top: 20px">
+            <p
+              id="humidity-value"
+              style="color: #575757; font-size: 28px; margin-top: 20px"
+            >
               NA
             </p>
           </div>
@@ -111,12 +122,19 @@
       <div class="card">
         <p class="card-head">Connecting Bulb</p>
         <div class="card-img1">
-          <img id="connection-bulb-img" src="images/off-bulb.png" width="150px" />
-          <strong id="connection-bulb-status" style="color: red; font-size: 28px; margin-top: 20px">OFF</strong>
+          <img
+            id="connection-bulb-img"
+            src="images/off-bulb.png"
+            width="150px"
+          />
+          <strong
+            id="connection-bulb-status"
+            style="color: red; font-size: 28px; margin-top: 20px"
+            >OFF</strong
+          >
         </div>
       </div>
     </div>
-
 
     <script>
       function changeMotion() {
@@ -127,17 +145,16 @@
         if (bulbStatus.innerHTML === "OFF") {
           bulbStatus.innerHTML = "ON";
           bulbStatus.style.color = "green";
-          motionMessage.style.display = "block"
+          motionMessage.style.display = "block";
 
           bulbImage.src = "images/on-bulb.png";
         } else {
           bulbStatus.innerHTML = "OFF";
           bulbStatus.style.color = "red";
-          motionMessage.style.display = "none"
+          motionMessage.style.display = "none";
           bulbImage.src = "images/off-bulb.png";
         }
       }
-
 
       function checkConnection() {
         var bulbStatus = document.getElementById("connection-bulb-status");
@@ -154,7 +171,6 @@
         }
       }
 
-
       function checkTemp() {
         var humidityValue = document.getElementById("humidity-value");
         var temperatureValue = document.getElementById("temperature-value");
@@ -162,13 +178,11 @@
         if (humidityValue.innerHTML === "NA") {
           humidityValue.innerHTML = "85 %";
           humidityValue.style.color = "green";
-          humidityValue.style.fontWeight = "600"
-
+          humidityValue.style.fontWeight = "600";
         } else {
           humidityValue.innerHTML = "NA";
           humidityValue.style.color = "#575757";
-          humidityValue.style.fontWeight = "500"
-
+          humidityValue.style.fontWeight = "500";
         }
 
         if (temperatureValue.innerHTML === "NA") {
@@ -178,8 +192,7 @@
         } else {
           temperatureValue.innerHTML = "NA";
           temperatureValue.style.color = "#575757";
-          temperatureValue.style.fontWeight = "400"
-
+          temperatureValue.style.fontWeight = "400";
         }
       }
     </script>
