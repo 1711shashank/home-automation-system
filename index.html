@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Home Automation System </title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #363636;
+      }
+
+      .header {
+        background-color: #2b2b2b;
+        padding: 10px 20px;
+        height: auto;
+        max-height: 70px;
+        text-align: center;
+        color: #ededed;
+      }
+
+      .card-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: calc(100vh - 100px);
+        padding: 0 50px;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #2b2b2b;
+        color: #ededed;
+        border-radius: 25px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        padding: 20px;
+        margin: 20px;
+        width: 20vw;
+        height: 53vh;
+      }
+      .card-head {
+        font-size: 25px;
+        margin: 5px;
+      }
+      .card-img1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+      }
+      .card-img2 {
+        margin-top: 32px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        width: inherit;
+        padding: 0 10px;
+      }
+      .card-img1 > * {
+        margin: 10px;
+      }
+      .card-message {
+        display: none;
+        color: green;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Home Automation System</h1>
+    </div>
+
+    <button onclick="changeMotion()"> Change Motion </button>
+    <button onclick="checkTemp()">check Temp</button>
+    <button onclick="checkConnection()">check Connection</button>
+    
+
+    <div class="card-container">
+      <div class="card">
+        <p class="card-head">Motion Sensor</p>
+        <div class="card-img1">
+          <img id="motion-bulb-img" src="off_bulb-removebg-preview.png" width="150px" />
+          <strong id="motion-bulb-status" style="color: red; font-size: 28px; margin-top: 20px">OFF</strong>
+
+        </div>
+        <p id="motion-detected-message" class="card-message"> Motion Detected </p>
+      </div>
+
+      <div class="card">
+        <p class="card-head">Temperature and Humidity</p>
+
+        <div class="card-img2">
+          <div class="card-img1">
+            <img src="temp-removebg-preview.png" width="85px" />
+            <p id="temperature-value" style="color: #575757; font-size: 28px; margin-top: 20px">
+              NA
+            </p>
+          </div>
+          <div class="card-img1">
+            <img src="humidity-removebg-preview.png" width="105px" />
+            <p id="humidity-value" style="color: #575757; font-size: 28px; margin-top: 20px">
+              NA
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card-head">Connecting Bulb</p>
+        <div class="card-img1">
+          <img id="connection-bulb-img" src="off_bulb-removebg-preview.png" width="150px" />
+          <strong id="connection-bulb-status" style="color: red; font-size: 28px; margin-top: 20px">OFF</strong>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      function changeMotion() {
+        var bulbStatus = document.getElementById("motion-bulb-status");
+        var bulbImage = document.getElementById("motion-bulb-img");
+        var motionMessage = document.getElementById("motion-detected-message");
+
+        if (bulbStatus.innerHTML === "OFF") {
+          bulbStatus.innerHTML = "ON";
+          bulbStatus.style.color = "green";
+          motionMessage.style.display = "block"
+
+          bulbImage.src = "onbilb-removebg-preview.png";
+        } else {
+          bulbStatus.innerHTML = "OFF";
+          bulbStatus.style.color = "red";
+          motionMessage.style.display = "none"
+          bulbImage.src = "off_bulb-removebg-preview.png";
+        }
+      }
+
+
+      function checkConnection() {
+        var bulbStatus = document.getElementById("connection-bulb-status");
+        var bulbImage = document.getElementById("connection-bulb-img");
+
+        if (bulbStatus.innerHTML === "OFF") {
+          bulbStatus.innerHTML = "ON";
+          bulbStatus.style.color = "green";
+          bulbImage.src = "onbilb-removebg-preview.png";
+        } else {
+          bulbStatus.innerHTML = "OFF";
+          bulbStatus.style.color = "red";
+          bulbImage.src = "off_bulb-removebg-preview.png";
+        }
+      }
+
+
+      function checkTemp() {
+        var humidityValue = document.getElementById("humidity-value");
+        var temperatureValue = document.getElementById("temperature-value");
+
+        if (humidityValue.innerHTML === "NA") {
+          humidityValue.innerHTML = "85 %";
+          humidityValue.style.color = "green";
+          humidityValue.style.fontWeight = "600"
+
+        } else {
+          humidityValue.innerHTML = "NA";
+          humidityValue.style.color = "#575757";
+          humidityValue.style.fontWeight = "500"
+
+        }
+
+        if (temperatureValue.innerHTML === "NA") {
+          temperatureValue.innerHTML = "36 °C";
+          temperatureValue.style.color = "green";
+          temperatureValue.style.fontWeight = "600";
+        } else {
+          temperatureValue.innerHTML = "NA";
+          temperatureValue.style.color = "#575757";
+          temperatureValue.style.fontWeight = "400"
+
+        }
+      }
+    </script>
+  </body>
+</html>
