@@ -12,7 +12,7 @@
 
       .header {
         background-color: #2b2b2b;
-        padding: 10px 20px;
+        padding: 1px;
         height: auto;
         max-height: 70px;
         text-align: center;
@@ -82,7 +82,7 @@
       <div class="card">
         <p class="card-head">Motion Sensor</p>
         <div class="card-img1">
-          <img id="motion-bulb-img" src="off_bulb-removebg-preview.png" width="150px" />
+          <img id="motion-bulb-img" src="images/off-bulb.png" width="150px" />
           <strong id="motion-bulb-status" style="color: red; font-size: 28px; margin-top: 20px">OFF</strong>
 
         </div>
@@ -94,13 +94,13 @@
 
         <div class="card-img2">
           <div class="card-img1">
-            <img src="temp-removebg-preview.png" width="85px" />
+            <img src="images/temperature.png" width="85px" />
             <p id="temperature-value" style="color: #575757; font-size: 28px; margin-top: 20px">
               NA
             </p>
           </div>
           <div class="card-img1">
-            <img src="humidity-removebg-preview.png" width="105px" />
+            <img src="images\humidity.png" width="105px" />
             <p id="humidity-value" style="color: #575757; font-size: 28px; margin-top: 20px">
               NA
             </p>
@@ -111,7 +111,7 @@
       <div class="card">
         <p class="card-head">Connecting Bulb</p>
         <div class="card-img1">
-          <img id="connection-bulb-img" src="off_bulb-removebg-preview.png" width="150px" />
+          <img id="connection-bulb-img" src="images/off-bulb.png" width="150px" />
           <strong id="connection-bulb-status" style="color: red; font-size: 28px; margin-top: 20px">OFF</strong>
         </div>
       </div>
@@ -129,12 +129,12 @@
           bulbStatus.style.color = "green";
           motionMessage.style.display = "block"
 
-          bulbImage.src = "onbilb-removebg-preview.png";
+          bulbImage.src = "images/on-bulb.png";
         } else {
           bulbStatus.innerHTML = "OFF";
           bulbStatus.style.color = "red";
           motionMessage.style.display = "none"
-          bulbImage.src = "off_bulb-removebg-preview.png";
+          bulbImage.src = "images/off-bulb.png";
         }
       }
 
@@ -146,11 +146,11 @@
         if (bulbStatus.innerHTML === "OFF") {
           bulbStatus.innerHTML = "ON";
           bulbStatus.style.color = "green";
-          bulbImage.src = "onbilb-removebg-preview.png";
+          bulbImage.src = "images/on-bulb.png";
         } else {
           bulbStatus.innerHTML = "OFF";
           bulbStatus.style.color = "red";
-          bulbImage.src = "off_bulb-removebg-preview.png";
+          bulbImage.src = "images/off-bulb.png";
         }
       }
 
